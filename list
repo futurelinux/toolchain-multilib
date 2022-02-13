@@ -46,4 +46,4 @@ libcap
 fakeroot
 pkg-config
 pacman
-clean
+stripping

@@ -1,0 +1,15 @@
+pkgver=7.81.0
+source=(https://curl.se/download/curl-$pkgver.tar.xz)
+
+build() {
+cd curl-$pkgver
+
+./configure --prefix=/tools        \
+            --with-ssl                 \
+            --enable-threaded-resolver \
+            --with-ca-bundle=/tools/etc/ssl/certs/ca-certificates.crt
+
+make
+
+make install
+}

@@ -1,0 +1,12 @@
+pkgver=3.6.0
+source=(https://github.com/libarchive/libarchive/releases/download/v$pkgver/libarchive-$pkgver.tar.xz)
+
+build() {
+cd libarchive-$pkgver
+
+./configure --prefix=/tools --without-xml2
+
+make
+
+make install
+}

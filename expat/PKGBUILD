@@ -1,0 +1,12 @@
+pkgver=2.4.4
+source=(https://github.com/libexpat/libexpat/releases/download/R_${version//./_}/expat-$pkgver.tar.xz)
+
+build() {
+cd  expat-$pkgver
+
+./configure --prefix=/tools
+
+make
+
+make install
+}

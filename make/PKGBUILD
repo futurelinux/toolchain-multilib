@@ -1,0 +1,12 @@
+pkgver=4.3
+source=(https://ftp.gnu.org/gnu/make/make-$pkgver.tar.gz)
+
+build() {
+cd make-$pkgver
+
+./configure --prefix=/tools --without-guile
+
+make
+
+make install
+}

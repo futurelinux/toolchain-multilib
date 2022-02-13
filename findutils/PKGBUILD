@@ -1,0 +1,14 @@
+pkgver=4.9.0
+source=(https://ftp.gnu.org/gnu/findutils/findutils-$pkgver.tar.xz)
+
+build() {
+cd findutils-$pkgver
+
+./configure --prefix=/tools
+
+make
+
+make check  || true
+
+make install
+}

@@ -1,0 +1,8 @@
+build() {
+	strip --strip-debug /tools/lib{,32}/*
+	/usr/bin/strip --strip-unneeded /tools/{,s}bin/*
+
+	rm -rf /tools/{,share}/{info,man,doc}
+
+	find /tools/{lib{,32},libexec} -name \*.la -delete
+}

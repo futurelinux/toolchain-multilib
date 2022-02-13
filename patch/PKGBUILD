@@ -1,0 +1,12 @@
+pkgver=2.7.6
+source=(https://ftp.gnu.org/gnu/patch/patch-$pkgver.tar.xz)
+
+build() {
+cd patch-$pkgver
+
+./configure --prefix=/tools
+
+make
+
+make install
+}

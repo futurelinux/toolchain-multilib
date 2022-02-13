@@ -1,0 +1,14 @@
+pkgver=5.41
+source=(http://ftp.astron.com/pub/file/file-$pkgver.tar.gz)
+
+build() {
+cd file-$pkgver
+
+./configure --prefix=/tools
+
+make
+
+make check  || true
+
+make install
+}

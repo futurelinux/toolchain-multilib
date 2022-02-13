@@ -1,0 +1,17 @@
+pkgver=5.45.4
+source=(https://downloads.sourceforge.net/expect/expect$pkgver.tar.gz)
+
+build() {
+cd expect$pkgver
+
+cp -v configure{,.orig}
+sed 's:/usr/local/bin:/bin:' configure.orig > configure
+
+./configure --prefix=/tools       \
+            --with-tcl=/tools/lib \
+            --with-tclinclude=/tools/include
+
+make
+
+make SCRIPTS="" install
+}

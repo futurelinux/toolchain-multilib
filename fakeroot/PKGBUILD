@@ -1,0 +1,14 @@
+pkgver=1.27
+source=(http://http.debian.net/debian/pool/main/f/fakeroot/fakeroot_$pkgver.orig.tar.gz)
+
+build() {
+cd fakeroot-$pkgver
+
+./configure --prefix=/tools                 \
+            --libdir=/tools/lib/libfakeroot \
+            --with-ipc=sysv
+
+make
+
+make install
+}

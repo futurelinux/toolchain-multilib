@@ -1,0 +1,10 @@
+pkgver=1.6.3
+source=(https://ftp.gnu.org/gnu/dejagnu/dejagnu-$pkgver.tar.gz)
+
+build() {
+cd dejagnu-$pkgver
+
+./configure --prefix=/tools
+
+make install
+}

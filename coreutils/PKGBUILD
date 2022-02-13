@@ -1,0 +1,12 @@
+pkgver=9.0
+source=(https://ftp.gnu.org/gnu/coreutils/coreutils-$pkgver.tar.xz)
+
+build() {
+cd coreutils-$pkgver
+
+./configure --prefix=/tools --enable-install-program=hostname
+
+make
+
+make install
+}

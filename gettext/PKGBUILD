@@ -1,0 +1,12 @@
+pkgver=0.21
+source=(https://ftp.gnu.org/gnu/gettext/gettext-$pkgver.tar.xz)
+
+build() {
+cd gettext-$pkgver
+
+./configure --disable-shared
+
+make
+
+cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /tools/bin
+}
